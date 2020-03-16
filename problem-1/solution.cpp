@@ -3,8 +3,8 @@
 #include <cmath>
 #include <iomanip>
 
-#define long long ll;
-#define unsigned long long ull;
+#define ll long long
+#define ull unsigned long long
 
 using namespace std;
 
