@@ -1,6 +1,7 @@
 #include <iostream>
-#include <limits>
 #include <vector>
+#include <climits>
+#include <bitset>
 
 #define ll long long
 #define ull unsigned long long
@@ -18,31 +19,27 @@ int main() {
 		cin>>arr[n_i];
 	}
 
-	vector<int> bitArr(numeric_limits<int>::digits, 0);
+	const int sizeOfInt = sizeof(int) * CHAR_BIT;
+	vector<int> bitArr(sizeOfInt, 0);
 	for(int n_i=0; n_i<n; n_i++) {
-		int bitIndex = bitArr.size() - 1;
-		int bitRecognizer = 1;
-		while(bitIndex >= 0 && bitRecognizer <= arr[n_i]) {
-			if((arr[n_i] & bitRecognizer) != 0) {
-				bitArr[bitIndex]++;
-				if(bitArr[bitIndex] == 3) {
-					bitArr[bitIndex] = 0;
+		bitset<sizeOfInt> bitRep(arr[n_i]);
+
+		for(int i=0; i<sizeOfInt; i++) {
+			if(bitRep[i]) {
+				bitArr[i]++;
+				if(bitArr[i] == 3) {
+					bitArr[i] = 0;
 				}
 			}
-			bitRecognizer = (bitRecognizer << 1);
-			bitIndex--;
 		}
 	}
 
-	int res = 0;
-	int bitRecognizer = 1;
-	for(int n_i=bitArr.size()-1; n_i>=0; n_i--) {
-		if(bitArr[n_i] != 0) {
-			res = (res | bitRecognizer);
-		}
-		bitRecognizer = (bitRecognizer << 1);
+	bitset<sizeOfInt> res;
+	for(int i=0; i<sizeOfInt; i++) {
+		res[i] = bitArr[i];
 	}
+	int result = (int)(res.to_ulong());
 
-	cout<<"Non-duplicated integer: "<<res<<endl;
+	cout<<"Non-duplicated integer: "<<result<<endl;
 	return 0;
 }
