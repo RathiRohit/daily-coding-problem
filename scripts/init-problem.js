@@ -1,4 +1,4 @@
-const rootDir = '../';
+const rootDir = './';
 const fs = require('fs');
 
 const cppProblemTemplate =
@@ -24,20 +24,20 @@ try {
 		const newSerialString = padZeros(newSerial, 5);
 		console.log(`${count} problems found, creating problem-${newSerialString}`);
 
-		if(fs.existsSync(`../problem-${newSerialString}`)) {
+		if(fs.existsSync(`./problem-${newSerialString}`)) {
 				console.error(`ERROR: Directory problem-${newSerialString} already exists.`);
 				return;
 		}
 
-		fs.mkdirSync(`../problem-${newSerialString}`);
+		fs.mkdirSync(`./problem-${newSerialString}`);
 
 		fs.writeFileSync(
-				`../problem-${newSerialString}/problem.md`,
+				`./problem-${newSerialString}/problem.md`,
 				`Problem: ${newSerial}\n---\n`
 		);
 
 		fs.writeFileSync(
-				`../problem-${newSerialString}/solution.cpp`,
+				`./problem-${newSerialString}/solution.cpp`,
 				cppProblemTemplate
 		);
 } catch (e) {
