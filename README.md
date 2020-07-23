@@ -8,6 +8,7 @@ A problem a day keeps the headache away.
 ```
 g++ solution.cpp
 ```
+(Note: some programs may require compiling with `c++11` or later.)
 
 ##### Running compiled code:
 ```
