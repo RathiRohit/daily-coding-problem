@@ -10,6 +10,10 @@ g++ solution.cpp
 ```
 (Note: some programs may require compiling with `c++11` or later.)
 
+(Another note: In the interest of my personal time, solutions for
+`leetcode` problems are checked in as is without handling
+input/output and header files.)
+
 ##### Running compiled code:
 ```
 ./a.out
