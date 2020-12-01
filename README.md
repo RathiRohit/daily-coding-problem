@@ -18,6 +18,10 @@ input/output and header files.)
 ```
 ./a.out
 ```
+OR if input file is available:
+```
+./a.out < input.txt
+```
 
 ##### Commit message format:
 ```
