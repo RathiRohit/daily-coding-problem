@@ -31,15 +31,9 @@ try {
 
 		fs.mkdirSync(`./problem-${newSerialString}`);
 
-		fs.writeFileSync(
-				`./problem-${newSerialString}/problem.md`,
-				`Problem: ${newSerial}\n---\n`
-		);
-
-		fs.writeFileSync(
-				`./problem-${newSerialString}/solution.cpp`,
-				cppProblemTemplate
-		);
+		fs.writeFileSync(`./problem-${newSerialString}/input.txt`, '');
+		fs.writeFileSync(`./problem-${newSerialString}/problem.md`, `Problem: ${newSerial}\n---\n`);
+		fs.writeFileSync(`./problem-${newSerialString}/solution.cpp`, cppProblemTemplate);
 } catch (e) {
 		console.error(`ERROR: ${e}`);
 }
