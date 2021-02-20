@@ -1,0 +1,14 @@
+{
+  "name": "init-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "init-problem.js",
+  "scripts": {
+    "init": "node init-problem.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
